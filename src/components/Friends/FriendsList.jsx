@@ -1,13 +1,13 @@
 import { Friend } from './Friends';
-import { FriendList } from './Friends.styled';
+import { FriendList, InfoBlock } from './Friends.styled';
 
 export const FriendsList = ({ friends }) => {
   return (
     <FriendList>
       {friends.map(friend => (
-        <li className="friends" key={friend.id}>
+        <InfoBlock key={friend.id}>
           <Friend friend={friend} />
-        </li>
+        </InfoBlock>
       ))}
     </FriendList>
   );
