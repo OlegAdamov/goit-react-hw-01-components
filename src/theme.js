@@ -10,6 +10,8 @@ export const theme = {
     white: 'white',
     red: 'red',
     green: 'green',
+    seawave: '#09edc7',
+    magenta: '#e9a4f5',
   },
   radii: {
     none: '0',
