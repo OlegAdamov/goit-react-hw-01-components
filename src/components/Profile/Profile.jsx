@@ -1,11 +1,11 @@
 import { GiShadowFollower, GiSixEyes, GiGlassHeart } from 'react-icons/gi';
-import { Wrapper } from './Profile.styled';
+import './Profile.css';
 
 export const Profile = ({
   user: { username, tag, location, avatar, stats },
 }) => {
   return (
-    <Wrapper className="profile">
+    <div className="profile">
       <div className="description">
         <img src={avatar} alt="User avatar" className="avatar" />
         <p className="name">{username}</p>
@@ -30,6 +30,6 @@ export const Profile = ({
           <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
-    </Wrapper>
+    </div>
   );
 };

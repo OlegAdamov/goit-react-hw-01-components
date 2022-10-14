@@ -1,0 +1,38 @@
+.profile {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 360px;
+  margin-bottom: 64px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.description > p {
+  margin-bottom: 4px;
+}
+
+.avatar {
+  width: 60%;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(253, 255, 130);
+  border: 0.5px solid black;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.stats > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84px;
+}
