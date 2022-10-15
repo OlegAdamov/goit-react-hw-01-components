@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { GiShadowFollower, GiSixEyes, GiGlassHeart } from 'react-icons/gi';
 import './Profile.css';
 
@@ -32,4 +33,22 @@ export const Profile = ({
       </ul>
     </div>
   );
+};
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+  }),
+};
+
+Profile.propTypes = {
+  stats: PropTypes.objectOf(
+    PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    })
+  ),
 };
