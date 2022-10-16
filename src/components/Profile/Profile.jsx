@@ -3,8 +3,15 @@ import { GiShadowFollower, GiSixEyes, GiGlassHeart } from 'react-icons/gi';
 import './Profile.css';
 
 export const Profile = ({
-  user: { username, tag, location, avatar, stats },
+  user: {
+    username,
+    tag,
+    location,
+    avatar = 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
+    stats,
+  },
 }) => {
+  const { followers = 0, views = 0, likes = 0 } = stats;
   return (
     <div className="profile">
       <div className="description">
@@ -18,17 +25,17 @@ export const Profile = ({
         <li>
           <GiShadowFollower />
           <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
           <GiSixEyes />
           <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <span className="quantity">{views}</span>
         </li>
         <li>
           <GiGlassHeart />
           <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <span className="quantity">{likes}</span>
         </li>
       </ul>
     </div>
@@ -38,17 +45,13 @@ export const Profile = ({
 Profile.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-  }),
-};
-
-Profile.propTypes = {
-  stats: PropTypes.objectOf(
-    PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    })
-  ),
+    stats: PropTypes.shape({
+      followers: PropTypes.number,
+      views: PropTypes.number,
+      likes: PropTypes.number,
+    }).isRequired,
+  }).isRequired,
 };

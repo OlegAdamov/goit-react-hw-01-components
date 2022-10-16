@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types';
 import { Statistic } from './Statistic';
-import { Title, StatWrapper, StatList, Item } from './Statistic.styled';
+import { Title, StatWrapper, StatList } from './Statistic.styled';
 
 export const StatisticList = ({ statistics }) => {
   return (
     <StatWrapper>
-      <Title>Upload stats</Title>
+      {Title && <Title>Upload stats</Title>}
       <StatList>
         {statistics.map(statistic => (
-          <Item key={statistic.id}>
-            <Statistic statistic={statistic} />
-          </Item>
+          <Statistic statistic={statistic} key={statistic.id} />
         ))}
       </StatList>
     </StatWrapper>

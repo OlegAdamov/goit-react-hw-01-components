@@ -9,11 +9,14 @@ export const TransactionTable = styled.table`
 export const TableHeader = styled.th`
   padding: 8px;
   border: 1px solid ${p => p.theme.colors.black};
-  background-color: ${p => p.theme.colors.seawave};
+  background-color: ${p => p.theme.colors.green};
 `;
 
 export const TableRow = styled.tr`
-  background-color: ${p => p.theme.colors.magenta};
+  background-color: ${p => p.theme.colors.seawave};
+  &:nth-child(even) {
+    background-color: ${p => p.theme.colors.magenta};
+  }
 `;
 
 export const TableData = styled.td`
